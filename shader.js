@@ -189,6 +189,8 @@ function setupWebGL(evt) {
 				);
 			});
 			sendSettings();
+
+			requestAnimationFrame(drawFrameLoop);
 		});
 	});
 
@@ -248,6 +250,9 @@ function drawFrame() {
 	gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 	gl.useProgram(render_program);
 	drawFullScreenQuad(render_program, tex1, "u_sim_data");
+}
 
-	requestAnimationFrame(drawFrame);
+function drawFrameLoop() {
+	drawFrame();
+	requestAnimationFrame(drawFrameLoop);
 }
