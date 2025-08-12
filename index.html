@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="atbf.css">
+</head>
+
+<body>
+    <input type="color" id="c" tabindex=-1 hidden>
+    <canvas id="output"></canvas>
+    <div id="point-container">
+
+    </div>
+
+    <div id="control-container">
+        <table>
+            <tr>
+                <td><label>points</label></td>
+                <td><button id="add-point">+</button> <button id="delete-point">-</button></td>
+                <td><p id="points-display" class="display">6</p></td>
+            </tr>
+            <tr>
+                <td><label for="gravity">gravity</label></td>
+                <td><input name="gravity" id="gravity" type="range" min="0" max="100" value="40"></td>
+                <td>
+                    <p id="gravity-display" class="display">40</p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="drag">drag</label></td>
+                <td><input name="drag" id="drag" type="range" min="0" max="100" value="5"></td>
+                <td>
+                    <p id="drag-display" class="display">25</p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="steps">steps</label></td>
+                <td><input name="steps" id="steps" type="range" min="0" max="200" value="15"></td>
+                <td>
+                    <p id="steps-display" class="display">15</p>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="maxsteps">max steps</label></td>
+                <td><input name="maxsteps" id="maxsteps" type="range" min="0" max="500" value="200"></td>
+                <td>
+                    <p id="maxsteps-display" class="display">40000</p>
+                </td>
+            </tr>
+        </table>
+        <input name="settings-string" id="settings-string"><label for="settings-string"><button id="import">import</button></label>
+        <p class="display" id="status"></p>
+    </div>
+
+    <p id="errortext" class="display"></p>
+
+    <script type="x-shader/x-vertex" id="vertex-shader">
+        #version 100
+        precision highp float;
+
+        attribute vec2 position;
+
+        void main() {
+            gl_Position = vec4(position, 0.0, 1.0);
+        }
+    </script>
+
+    <script src="shader.js"></script>
+    <script src="ui.js"></script>
+</body>
+
+</html>

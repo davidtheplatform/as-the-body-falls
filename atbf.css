@@ -1,0 +1,117 @@
+#point-container {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: 0px;
+}
+
+#output {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+
+    z-index: -1;
+}
+
+.point {
+    width: 10px;
+    height: 10px;
+    border: 5px solid lightgray;
+    border-radius: 100px;
+    background-color: red;
+
+    position: absolute;
+}
+
+#control-container {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+
+    background-color: black;
+    opacity: 20%;
+
+    padding: 5px;
+}
+
+#control-container:hover {
+    opacity: 75%;
+}
+
+label {
+    color: white;
+    font-family: monospace;
+    font-size: 1.25em;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+
+    background: black;
+    opacity: unset;
+
+    height: 1.25em;
+    width: 100px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 0px;
+    border-radius: 0px;
+    width: 10px;
+    height: 1.25em;
+    color: gray;
+    background-color: gray;
+}
+input[type="range"]::-moz-range-thumb {
+    appearance: none;
+    border: 0px;
+    border-radius: 0px;
+    width: 10px;
+    height: 1.25em;
+    color: gray;
+    background-color: gray;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    border: 2px solid gray;
+    height: 1.25em;
+}
+input[type="range"]::-moz-range-track {
+    border: 2px solid gray;
+    height: 1.25em;
+}
+
+.display {
+    color: white;
+    font-family: monospace;
+    font-size: 1.25em;
+    width: 50px;
+
+    margin: 0px;
+}
+
+#status {
+    width: unset;
+}
+
+#settings-string {
+    background-color: black;
+    border: 2px solid gray;
+    color: white;
+    font-family: monospace;
+}
+
+button {
+    border: 2px solid gray;
+    border-radius: 0px;
+    background-color: black;
+    color: white;
+    font-family: monospace;
+}
